@@ -4,6 +4,8 @@
  */
 package ventanas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author soulw
@@ -28,12 +30,11 @@ public class Interfaz extends javax.swing.JFrame {
     private void initComponents() {
 
         botonSalida = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        salidaConversor = new javax.swing.JLabel();
         Conversor = new javax.swing.JButton();
         monedaB = new javax.swing.JComboBox<>();
         monedaA = new javax.swing.JComboBox<>();
         Text = new javax.swing.JLabel();
+        salidaConversor = new javax.swing.JTextField();
         entradaConversor = new javax.swing.JTextField();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -51,13 +52,6 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botonSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        salidaConversor.setText("Salida");
-        jPanel1.add(salidaConversor);
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 70, -1));
 
         Conversor.setBackground(new java.awt.Color(0, 153, 102));
         Conversor.setForeground(new java.awt.Color(242, 242, 242));
@@ -90,6 +84,14 @@ public class Interfaz extends javax.swing.JFrame {
         Text.setText("A");
         getContentPane().add(Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
 
+        salidaConversor.setEditable(false);
+        salidaConversor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salidaConversorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(salidaConversor, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 70, 30));
+
         entradaConversor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entradaConversorActionPerformed(evt);
@@ -109,7 +111,18 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalidaActionPerformed
 
     private void ConversorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConversorActionPerformed
-        // TODO add your handling code here:
+        try{
+            Operations operacion = new Operations();
+            float resultado;
+            float valor=Float.parseFloat(entradaConversor.getText());
+            operacion.setFirstIndex(monedaA.getSelectedIndex());
+            operacion.setSecondIndex(monedaB.getSelectedIndex());
+            
+            resultado=operacion.conversor(valor);
+            salidaConversor.setText(String.valueOf(resultado));
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane,"Se encontro un error, use porfavor numeros.","Alert",JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_ConversorActionPerformed
 
     private void monedaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monedaBActionPerformed
@@ -123,6 +136,10 @@ public class Interfaz extends javax.swing.JFrame {
     private void entradaConversorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaConversorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaConversorActionPerformed
+
+    private void salidaConversorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salidaConversorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_salidaConversorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,9 +182,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton botonSalida;
     private javax.swing.JTextField entradaConversor;
     private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> monedaA;
     private javax.swing.JComboBox<String> monedaB;
-    private javax.swing.JLabel salidaConversor;
+    private javax.swing.JTextField salidaConversor;
     // End of variables declaration//GEN-END:variables
 }
