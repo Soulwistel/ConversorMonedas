@@ -27,13 +27,14 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtonSalida = new javax.swing.JButton();
-        jButtonConversor = new javax.swing.JButton();
-        jComboBoxDivisa = new javax.swing.JComboBox<>();
-        jComboBoxDivisa1 = new javax.swing.JComboBox<>();
-        jLabel = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        botonSalida = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        salidaConversor = new javax.swing.JLabel();
+        Conversor = new javax.swing.JButton();
+        monedaB = new javax.swing.JComboBox<>();
+        monedaA = new javax.swing.JComboBox<>();
+        Text = new javax.swing.JLabel();
+        entradaConversor = new javax.swing.JTextField();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,54 +42,60 @@ public class Interfaz extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonSalida.setBackground(new java.awt.Color(0, 153, 102));
-        jButtonSalida.setForeground(new java.awt.Color(242, 242, 242));
-        jButtonSalida.setText("Salir");
-        jButtonSalida.addActionListener(new java.awt.event.ActionListener() {
+        botonSalida.setBackground(new java.awt.Color(0, 153, 102));
+        botonSalida.setForeground(new java.awt.Color(242, 242, 242));
+        botonSalida.setText("Salir");
+        botonSalida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSalidaActionPerformed(evt);
+                botonSalidaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
+        getContentPane().add(botonSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
 
-        jButtonConversor.setBackground(new java.awt.Color(0, 153, 102));
-        jButtonConversor.setForeground(new java.awt.Color(242, 242, 242));
-        jButtonConversor.setText("Convertir");
-        jButtonConversor.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        salidaConversor.setText("Salida");
+        jPanel1.add(salidaConversor);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 70, -1));
+
+        Conversor.setBackground(new java.awt.Color(0, 153, 102));
+        Conversor.setForeground(new java.awt.Color(242, 242, 242));
+        Conversor.setText("Convertir");
+        Conversor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConversorActionPerformed(evt);
+                ConversorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonConversor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
+        getContentPane().add(Conversor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
 
-        jComboBoxDivisa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "MXN", "AUD", "YEN" }));
-        jComboBoxDivisa.addActionListener(new java.awt.event.ActionListener() {
+        monedaB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "MXN", "AUD", "YEN" }));
+        monedaB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxDivisaActionPerformed(evt);
+                monedaBActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxDivisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
+        getContentPane().add(monedaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
 
-        jComboBoxDivisa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "MXN", "AUD", "YEN" }));
-        jComboBoxDivisa1.addActionListener(new java.awt.event.ActionListener() {
+        monedaA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "MXN", "AUD", "YEN" }));
+        monedaA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxDivisa1ActionPerformed(evt);
+                monedaAActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxDivisa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
+        getContentPane().add(monedaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
 
-        jLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel.setText("A");
-        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
+        Text.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Text.setForeground(new java.awt.Color(255, 255, 255));
+        Text.setText("A");
+        getContentPane().add(Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        entradaConversor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                entradaConversorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 70, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 70, -1));
+        getContentPane().add(entradaConversor, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 70, 30));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LdbjSA.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 280));
@@ -96,26 +103,26 @@ public class Interfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalidaActionPerformed
+    private void botonSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalidaActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButtonSalidaActionPerformed
+    }//GEN-LAST:event_botonSalidaActionPerformed
 
-    private void jButtonConversorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConversorActionPerformed
+    private void ConversorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConversorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonConversorActionPerformed
+    }//GEN-LAST:event_ConversorActionPerformed
 
-    private void jComboBoxDivisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDivisaActionPerformed
+    private void monedaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monedaBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxDivisaActionPerformed
+    }//GEN-LAST:event_monedaBActionPerformed
 
-    private void jComboBoxDivisa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDivisa1ActionPerformed
+    private void monedaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monedaAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxDivisa1ActionPerformed
+    }//GEN-LAST:event_monedaAActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void entradaConversorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaConversorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_entradaConversorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,13 +160,14 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonConversor;
-    private javax.swing.JButton jButtonSalida;
-    private javax.swing.JComboBox<String> jComboBoxDivisa;
-    private javax.swing.JComboBox<String> jComboBoxDivisa1;
-    private javax.swing.JLabel jLabel;
+    private javax.swing.JButton Conversor;
+    private javax.swing.JLabel Text;
+    private javax.swing.JButton botonSalida;
+    private javax.swing.JTextField entradaConversor;
     private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> monedaA;
+    private javax.swing.JComboBox<String> monedaB;
+    private javax.swing.JLabel salidaConversor;
     // End of variables declaration//GEN-END:variables
 }
